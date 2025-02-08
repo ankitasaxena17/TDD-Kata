@@ -10,5 +10,6 @@ document.getElementById('calculateButton').addEventListener('click', () => {
   } catch (e) {
     resultDiv.style.color = "red";
     resultDiv.textContent = "Error: " + e.message;
+    console.error(e)
   }
 });

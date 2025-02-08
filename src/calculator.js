@@ -1,5 +1,6 @@
 const checkAndReturnCustomDelimitersAndInput = (input) => {
     let customDelimiter = '';
+    input = input.replace(/\\n/g, "\n");
     if (input.startsWith('//')) {
         const parts = input.split('\n');
         customDelimiter = parts[0].substring(2);
@@ -11,6 +12,8 @@ const checkAndReturnCustomDelimitersAndInput = (input) => {
 }
 
 export function add(input) {
+    input = input.trim();
+
     // case: empty string
     if(input === "") return 0;
 
@@ -20,6 +23,7 @@ export function add(input) {
     // case: comma seperated values, new line separator and custom delimiter
     const {customDelimiter, delimeterSeperatedInput} =  checkAndReturnCustomDelimitersAndInput(input)
     const delimiters = [',', '\n', customDelimiter];
+
     const numArray = delimeterSeperatedInput.split(new RegExp(`[${delimiters.join('')}]`)).map(num => Number(num.trim()));
 
     // case: negative numbers
