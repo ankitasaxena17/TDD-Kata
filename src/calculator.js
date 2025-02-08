@@ -21,5 +21,12 @@ export function add(input) {
     const {customDelimiter, delimeterSeperatedInput} =  checkAndReturnCustomDelimitersAndInput(input)
     const delimiters = [',', '\n', customDelimiter];
     const numArray = delimeterSeperatedInput.split(new RegExp(`[${delimiters.join('')}]`)).map(num => Number(num.trim()));
+
+    // case: negative numbers
+    const negatives = numArray.filter(num => num < 0);
+    if (negatives.length > 0) {
+        throw new Error(`negative numbers not allowed ${negatives.join(',')}`);
+    }
+
     return numArray.reduce((sum, num) => sum + num, 0);
 }
