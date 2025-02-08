@@ -5,7 +5,7 @@ export function add(numbers) {
     // case: single value
     if (!isNaN(numbers)) return Number(numbers);
 
-    // case: comma seperated values
-    const numArray = numbers.split(',').map(num => Number(num.trim()));
+    // case: comma seperated values and new line separator
+    const numArray = numbers.split(/[\n,]/).map(num => Number(num.trim()));
     return numArray.reduce((sum, num) => sum + num, 0);
 }
