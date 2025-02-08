@@ -1,3 +1,6 @@
-export function add(input) {
-    if(input === "") return 0;
+export function add(numbers) {
+    if(numbers === "") return 0;
+
+    if (!isNaN(numbers)) return Number(numbers);
+
 }
