@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>String Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>String Calculator</h1>
+    <p>
+      Enter numbers separated by commas or newlines. You can also specify a custom delimiter 
+      by starting with <code>//[delimiter]\n</code> (for example, <code>//;\n1;2</code>).
+    </p>
+    <input id="numberInput" type="text" placeholder="Enter input e.g. 1,2,3 or //;\n1;2">
+    <button id="calculateButton">Calculate Sum</button>
+    <div id="result"></div>
+  </div>
+</body>
+</html> 
