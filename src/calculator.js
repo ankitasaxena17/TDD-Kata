@@ -1,3 +1,3 @@
 export function add(input) {
-    return 0;
+    if(input === "") return 0;
 }
