@@ -41,19 +41,6 @@
     <div id="result"></div>
   </div>
   <script src="src/calculator.js" type="module"></script>
-  <script>
-    document.getElementById('calculateButton').addEventListener('click', () => {
-      const input = document.getElementById('numberInput').value;
-      const resultDiv = document.getElementById('result');
-      try {
-        const sum = add(input);
-        resultDiv.style.color = "green";
-        resultDiv.textContent = "Sum: " + sum;
-      } catch (e) {
-        resultDiv.style.color = "red";
-        resultDiv.textContent = "Error: " + e.message;
-      }
-    });
-  </script>
+  <script src="src/main.js" type="module"></script>
 </body>
 </html> 
